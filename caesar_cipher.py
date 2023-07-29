@@ -13,7 +13,6 @@ def caesar(start_text, shift_amount, cipher_direction):
       end_text += char
   print(f"Here's the {cipher_direction}d result: {end_text}")
 
-print(logo)
 
 should_end = False
 while not should_end:
