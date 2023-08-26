@@ -18,7 +18,7 @@ for product in products:
 
     item_price_text = item_price.get_text().replace("원", "").replace(",", "")
 
-    # 브랜드는 아디다스, 가격은 150,000원 이하인 상품 찾기
+    # 아디다스, 가격은 150,000원 이하인 상품 찾기
     if item_brand == "아디다스" and int(item_price_text)<=150000:
         print("브랜드명:", item_brand)
         print("상품명:", item_title)
