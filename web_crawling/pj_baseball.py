@@ -11,7 +11,6 @@ title = "팀 경기수 승 패 무 승률 게임차 연속 출루율 장타율 �
 writer.writerow(title)
 
 res = requests.get(url)
-res.raise_for_status()
 soup = BeautifulSoup(res.text, "lxml")
 data_rows = soup.find("div",attrs={"class":"tbl_box"}).find("tbody").find_all("tr")
 
