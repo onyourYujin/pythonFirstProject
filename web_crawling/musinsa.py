@@ -23,4 +23,4 @@ for product in products:
         print("브랜드명:", item_brand)
         print("상품명:", item_title)
         print("상품 가격:", item_price.get_text().strip())
-        print()
+        print( )
