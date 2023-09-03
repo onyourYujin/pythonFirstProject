@@ -20,7 +20,7 @@ for product in products:
 
     # 아디다스, 가격은 150,000원 이하인 상품 찾기
     if item_brand == "아디다스" and int(item_price_text)<=150000:
-        print("브랜드명:", item_brand)
+        print("브랜드 명:", item_brand)
         print("상품명:", item_title)
         print("상품 가격:", item_price.get_text().strip())
         print( )
