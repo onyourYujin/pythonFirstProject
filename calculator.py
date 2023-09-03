@@ -21,7 +21,7 @@ num1 = int(input("첫 번째 숫자를 입력하세요: "))
 num2 = int(input("두 번째 숫자를 입력하세요: "))
 for operation in operations:
     print(operation)
-operation_symbol = input("계산 형태를 고르시오: ")
+operation_symbol = input("어떻게 계산하시겠습니까?: ")
 calculation_function = operations[operation_symbol]
 result = calculation_function(num1,num2)
 
