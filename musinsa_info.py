@@ -11,9 +11,9 @@ def get_product_info(product):
         if item_brand_element is not None:
             item_brand = item_brand_element.get_text().strip()
         else:
-            item_brand = "브랜드 없음"
+            item_brand = "None"
     else:
-        item_brand = "브랜드 없음"
+        item_brand = "None"
 
     item_title = product.find("p", {"class": "list_info"}).find("a").get_text().strip()
     item_price = product.find("p", {"class": "price"})
