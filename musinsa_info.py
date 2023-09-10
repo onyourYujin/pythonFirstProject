@@ -51,7 +51,7 @@ def main():
     for product in products:
         item_brand, item_title, item_price = get_product_info(product)
 
-        # 브랜드는 아디다스, 가격은 150,000원 이하인 상품 찾기
+        # 아디다스 브랜드, 가격은 150,000원 이하인 상품 찾기
         if item_brand == "아디다스" and (item_price is not None) and (item_price <= 150000):
             data.append([item_brand, item_title, f"{item_price:,}원"])
 
