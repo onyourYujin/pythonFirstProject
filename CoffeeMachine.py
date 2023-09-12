@@ -24,7 +24,7 @@ MENU = {
     }
 }
 
-profit = 0 # 자판기 내부 돈의 양
+profit = 0 
 resources = {
     "water": 300,
     "milk": 200,
