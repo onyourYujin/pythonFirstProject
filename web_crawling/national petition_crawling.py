@@ -33,3 +33,39 @@ for _ in range(3):
     time.sleep(2) 
 
 browser.quit()
+
+
+
+# ==============================================================================
+page_number = 1
+
+while True:
+    url = f"https://petitions.assembly.go.kr/status/onGoing?start={page_number}"
+    browser.get(url)
+
+    time.sleep(5)
+    
+    soup = BeautifulSoup(browser.page_source, 'html.parser')
+
+    # 화면 가장 아래로 스크롤 내리기
+    browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+
+    tag = soup.find("div", attrs={"class": "ListDiv"}).find("ul")
+
+    for litag in tag.find_all("li"):  # li 태그 반복
+        ultag = litag.find("div", attrs={"class": "BoxWrap"})
+        if ultag:  # AttributeError NoneType -> 'ultag'가 존재하는 경우에만 'a' 요소 찾기
+            atag = ultag.find("a")
+            if atag:  # 'a' 요소가 존재하는 경우에만 제목 가져오기
+                title = atag.find("dl").find("dd").get_text()
+                print(title)
+
+    try:
+        next_button = browser.find_element(By.LINK_TEXT, '다음')  # 수정된 부분
+        next_button.click()
+        page_number += 1
+
+    except:
+        break  # 다음 페이지가 없으면 종료
+
+browser.quit()
