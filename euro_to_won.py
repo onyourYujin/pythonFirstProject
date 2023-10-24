@@ -7,13 +7,13 @@ res = requests.get(url)
 res.raise_for_status()
 soup = BeautifulSoup(res.text,"lxml")
 
-euro_naver_str = soup.find("div",attrs={"class":"price_info"}).find("strong").get_text()
-euro_naver_str = euro_naver_str.replace(",", "")  # str인 ","가 들어오면 int나 float로 변경 불가
-euro_naver = float(euro_naver_str)
+won_naver_str = soup.find("div",attrs={"class":"price_info"}).find("strong").get_text()
+won_naver_str = won_naver_str.replace(",", "")  # str인 ","가 들어오면 int나 float로 변경 불가
+won_naver = float(won_naver_str)
 
 def money_convert():
     euro = int(EURO_input.get())  # type : str => float으로 바꿔주기
-    money_calculate = euro * euro_naver
+    money_calculate = euro * won_naver
     result.config(text=f"{money_calculate:.2f}")  # 숫자를 label에 넣으려면 str 형태로 바꿔야 함
 
 # 새로운 window 화면 설정
